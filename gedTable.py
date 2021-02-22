@@ -16,7 +16,7 @@ def from_dob_to_age(born):
 def from_dob_to_death(born,death):
     return death.year - born.year - ((death.month, death.day) < (born.month, born.day))
 
-def printTablesData(indiDict_obj, famDict_obj):
+def printTable(indiDict_obj, famDict_obj):
     indi = PrettyTable()
     family = PrettyTable()
 
@@ -41,9 +41,7 @@ def printTablesData(indiDict_obj, famDict_obj):
 def processGEDCOM(file_path):
   
     gedcom_parser = Parser()
-
     gedcom_parser.parse_file(file_path)
-
     root_elements = gedcom_parser.get_element_list()
 
     info = {"INDI": [], "FAM":[]}
@@ -163,5 +161,5 @@ def processGEDCOM(file_path):
 if __name__ == "__main__":
     individuals, families = processGEDCOM("AkhileshReddyFamily.ged")
     sys.stdout = open("FamilyTree.txt", "w")
-    printTablesData(individuals, families)
+    printTable(individuals, families)
     sys.stdout.close()
