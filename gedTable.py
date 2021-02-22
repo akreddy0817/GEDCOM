@@ -38,7 +38,7 @@ def printTablesData(indiDict_obj, famDict_obj):
     return indi, family
 
 
-def processGedFile(file_path):
+def processGEDCOM(file_path):
   
     gedcom_parser = Parser()
 
@@ -161,7 +161,7 @@ def processGedFile(file_path):
     return indiDict, famDict
 
 if __name__ == "__main__":
-    individuals, families = processGedFile("AkhileshReddyFamily.ged")
+    individuals, families = processGEDCOM("AkhileshReddyFamily.ged")
     sys.stdout = open("FamilyTree.txt", "w")
     printTablesData(individuals, families)
     sys.stdout.close()
