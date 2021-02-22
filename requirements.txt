@@ -1,0 +1,5 @@
+prettytable==2.0.0
+python-dateutil==2.8.1
+python-gedcom==1.0.0
+six==1.15.0
+wcwidth==0.2.5
