@@ -14,29 +14,28 @@ def from_dob_to_age(born):
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
 def from_dob_to_death(born,death):
-    today = death
-    return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+    return death.year - born.year - ((death.month, death.day) < (born.month, born.day))
 
 def printTablesData(indiDict_obj, famDict_obj):
-    indiTable = PrettyTable()
-    familyTable = PrettyTable()
+    indi = PrettyTable()
+    family = PrettyTable()
 
-    indiTable.field_names = ['ID', 'Name', 'Gender', 'Birthday', 'Age', 'Alive', 'Death', 'Child', 'Spouse']
-    familyTable.field_names = ['ID','Married','Divorced','Husband ID', 'Husband Name', 'Wife ID','Wife Name', 'Children']
+    indi.field_names = ['ID', 'Name', 'Gender', 'Birthday', 'Age', 'Alive', 'Death', 'Child', 'Spouse']
+    family.field_names = ['ID','Married','Divorced','Husband ID', 'Husband Name', 'Wife ID','Wife Name', 'Children']
 
     for id in indiDict_obj:
         individualData = indiDict_obj[id]
-        indiTable.add_row(individualData.Get_details())
+        indi.add_row(individualData.Get_details())
 
     for id in famDict_obj:
         famData = famDict_obj[id]
-        familyTable.add_row(famData.Get_details())
+        family.add_row(famData.Get_details())
 
     print("Individuals")
-    print (indiTable)
+    print (indi)
     print("Families")
-    print (familyTable)
-    return indiTable, familyTable
+    print (family)
+    return indi, family
 
 
 def processGedFile(file_path):
