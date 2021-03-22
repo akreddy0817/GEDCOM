@@ -10,15 +10,15 @@ from dateutil import relativedelta as rdelta
 '''
 Bad Smell 01: There's repititive code by constantly comparing dates and storing the result in a variable. 
 It's also not as readable and this configuration helps it make it easier to compute and read. To solve this, I created a 
-function to compare 
+function to compare the dates as this solution offers simplicity. 
 
 
-Bad Smell 02: There's repititive output of printing the resultList() so need a function just for one call for both stories.
-
+Bad Smell 02: There's dplicated code in user story 1 and user story 2 with printing out the output the result list. The technique 
+I used was to create a printing method that can be group together and used in both user stories and makes the code more readable. 
 '''
 def print_the_list(lst):
     for i in lst:
-        print(lst)
+        print(i)
 
 def is_date1_older(date1, date2):
     return date1 > date2
@@ -60,7 +60,7 @@ def userStory01(file):
                     result_1_str = f"ERROR: INDIVIDUAL: US01: {individualID}: Death {user.Get_death()} occurs in the future"
                     resultList.append(result_1_str)
 
-    #print_the_list(resultList)
+    print_the_list(resultList)
     return resultList
 
 
