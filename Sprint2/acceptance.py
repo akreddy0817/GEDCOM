@@ -6,7 +6,7 @@ from userStory7 import userStory07
 from userStory8 import userStory08
 
 def sprint2_results():
-	
+	fileName="sprint2_Reddy.ged"
 	idict,famdict = processGEDCOM(fileName)
 	indiTable,familyTable= printTable(idict, famdict)
 	errors = []

@@ -1,0 +1,42 @@
+Individuals Information--------------->
++-----+----------------+--------+------------+-----+-------+------------+--------+--------------+
+|  ID |      Name      | Gender |  Birthday  | Age | Alive |   Death    | Child  |    Spouse    |
++-----+----------------+--------+------------+-----+-------+------------+--------+--------------+
+|  I1 | Akhilesh Reddy |   M    | 2000-08-17 |  20 |  True |     NA     | ['F1'] |      NA      |
+|  I2 |   Raj Reddy    |   M    | 1961-05-19 |  59 |  True |     NA     | ['F2'] |    ['F1']    |
+|  I3 |  Sapna Aruva   |   F    | 1971-08-02 |  49 |  True |     NA     | ['F3'] |    ['F1']    |
+|  I4 | Abhinav Reddy  |   M    | 1997-12-03 |  23 |  True |     NA     | ['F1'] |      NA      |
+|  I5 | Narsmiha Reddy |   M    | 1925-10-07 | 324 | False | 2250-04-13 |   NA   |    ['F2']    |
+|  I6 | Aruna Regatte  |   F    | 1941-09-13 |  60 | False | 2001-11-12 |   NA   |    ['F2']    |
+|  I7 | Rajender Aruva |   M    | 1935-08-29 |  82 | False | 2017-10-11 |   NA   |    ['F3']    |
+|  I8 |  Anjuna Aruva  |   F    | 1939-11-20 |  79 | False | 2019-02-14 |   NA   |    ['F3']    |
+|  I9 |  Dhruv Reddy   |   M    | 1967-10-11 |  53 |  True |     NA     | ['F2'] |    ['F4']    |
+| I10 | Hritesh Reddy  |   M    | 2000-09-10 |  20 |  True |     NA     | ['F4'] |      NA      |
+| I11 |  Priya Hedge   |   F    | 1972-08-10 |  48 |  True |     NA     |   NA   |    ['F4']    |
+| I12 | Anudeep Aruva  |   M    | 1968-09-09 |  52 |  True |     NA     | ['F3'] | ['F5', 'F6'] |
+| I13 |  Ruchi Manda   |   F    | 1976-10-10 |  44 |  True |     NA     |   NA   |    ['F6']    |
+| I14 | Ananya Pandey  |   F    | 1980-03-05 |  41 |  True |     NA     |   NA   |    ['F5']    |
+| I15 |  Nithi Aruva   |   F    | 2015-10-10 |  5  |  True |     NA     | ['F6'] |      NA      |
+| I16 |  Vindya Aruva  |   F    | 2015-07-14 |  5  |  True |     NA     | ['F5'] |      NA      |
+| I17 |  Venkat Aruva  |   M    | 2017-08-07 |  3  |  True |     NA     | ['F5'] |      NA      |
++-----+----------------+--------+------------+-----+-------+------------+--------+--------------+
+
+
+Family Information------------>
++----+------------+------------+------------+----------------+---------+---------------+----------------+
+| ID |  Married   |  Divorced  | Husband ID |  Husband Name  | Wife ID |   Wife Name   |    Children    |
++----+------------+------------+------------+----------------+---------+---------------+----------------+
+| F1 | 1995-03-05 |     NA     |     I2     |   Raj Reddy    |    I3   |  Sapna Aruva  |  ['I1', 'I4']  |
+| F2 | 1955-02-01 | 2020-01-09 |     I5     | Narsmiha Reddy |    I6   | Aruna Regatte |  ['I2', 'I9']  |
+| F3 | 2018-08-06 |     NA     |     I7     | Rajender Aruva |    I8   |  Anjuna Aruva | ['I3', 'I12']  |
+| F4 | 1999-05-03 |     NA     |     I9     |  Dhruv Reddy   |   I11   |  Priya Hedge  |    ['I10']     |
+| F5 | 2012-04-04 |     NA     |    I12     | Anudeep Aruva  |   I14   | Ananya Pandey | ['I16', 'I17'] |
+| F6 | 2003-09-08 | 2010-01-09 |    I12     | Anudeep Aruva  |   I13   |  Ruchi Manda  |    ['I15']     |
++----+------------+------------+------------+----------------+---------+---------------+----------------+
+
+ERROR: FAMILY: US05: Wedding 2018-08-06 occurs after Husband death 2017-10-11.
+ERROR: FAMILY: US06: Divorced 2020-01-09 after wife death 2001-11-12.
+ERROR: INDIVIDUAL: US07: Person's death occurs more than 150 years after birth. ID: I5 Birth date: 1925-10-07 Death date: 2250-04-13
+ERROR: FAMILY: US08: Child's birthday occurs before parents' marriage. ID: F3 Child's birthday: 1971-08-02 Parents' marriage date: 2018-08-06
+ERROR: FAMILY: US08: Child's birthday occurs before parents' marriage. ID: F3 Child's birthday: 1968-09-09 Parents' marriage date: 2018-08-06
+ERROR: FAMILY: US08: Child's birthday occurs more than 9 months after parents' divorce. ID: F6 Child's birthday: 2015-10-10 Parents' divorce date: 2010-01-09
