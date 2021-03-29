@@ -9,19 +9,19 @@ from dateutil import relativedelta as rdelta
 
 
 def userStory05(file):
-    i_dict,family = processGEDCOM(file)
+    i_dict,fam_dict = processGEDCOM(file)
     wife_status = False
     men_status = False
     errors = list()
 
 
-    for key in family:
-        family = family[key]
+    for key in fam_dict:
+        family = fam_dict[key]
         fam_id = family.Get_ID()
 
-        if(family[key] != 'NA'):
-            h_id = str(family[fam_id].Get_h_id())
-            w_id = str(family[fam_id].Get_w_id())
+        if(fam_dict[key] != 'NA'):
+            h_id = str(fam_dict[fam_id].Get_husbandID())
+            w_id = str(fam_dict[fam_id].Get_wifeID())
             if(h_id != 'NA' and w_id != 'NA'):
                 if(i_dict[h_id].Get_death() != 'NA'):
                     husbandDeath = i_dict[h_id].Get_death()
@@ -31,15 +31,15 @@ def userStory05(file):
                     wifeDeath = i_dict[w_id].Get_death()
                     wife_status = True
                     
-                if(family[fam_id].Get_married() != "NA"):
-                    marriedDate = family[fam_id].Get_married()
+                if(fam_dict[fam_id].Get_married() != "NA"):
+                    marriedDate = fam_dict[fam_id].Get_married()
 
                 if(wife_status and marriedDate>wifeDeath):
-                    result_1_str = f"ERROR: FAMILY: US05: The wedding occurs after wife death. Wedding Date: " + str(family[fam_id].Get_married()) + " Wife Death: " + str(wifeDeath)
+                    result_1_str = f"ERROR: FAMILY: US05: The wedding occurs after wife death. Wedding Date: " + str(fam_dict[fam_id].Get_married()) + " Wife Death: " + str(wifeDeath)
                     errors.append(result_1_str)
 
                 if(men_status and marriedDate>husbandDeath):
-                    result_1_str = f"ERROR: FAMILY: US05: The wedding occurs after husband death. Wedding Date: " + str(family[fam_id].Get_married()) + " Husband Death: " + str(husbandDeath)
+                    result_1_str = f"ERROR: FAMILY: US05: The wedding occurs after husband death. Wedding Date: " + str(fam_dict[fam_id].Get_married()) + " Husband Death: " + str(husbandDeath)
                     errors.append(result_1_str)
 
     return errors
