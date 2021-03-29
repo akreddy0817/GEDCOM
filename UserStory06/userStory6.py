@@ -12,7 +12,7 @@ def userStory06(file):
     i_dict,family = processGEDCOM(file)
     wife_status = False
     men_status = False
-    resultList = list()
+    errors = list()
 
 
     for key in family:
@@ -37,12 +37,12 @@ def userStory06(file):
 
                     if(wife_status and divorcedDate > wifeDeath):
                         result_1_str = f"ERROR: FAMILY: US06: divorce occurs after wife death. Divorce Date: " + str(family[fam_id].Get_divorced()) + " Wife Death: " + str(wifeDeath)
-                        resultList.append(result_1_str)
+                        errors.append(result_1_str)
 
                     if(men_status and divorcedDate>husbandDeath):
                         result_1_str = f"ERROR: FAMILY: US06: divorce occurs after husband death. Divorce Date: " + str(family[fam_id].Get_divorced()) + " Husband Death: " + str(husbandDeath)
-                        resultList.append(result_1_str)
-    return resultList
+                        errors.append(result_1_str)
+    return errors
 
 
 if __name__ == "__main__":
