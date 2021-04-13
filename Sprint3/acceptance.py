@@ -2,7 +2,7 @@ from gedTable import printTable
 from gedTable import processGEDCOM
 from userStory9 import userStory09
 from userStory10 import userStory10
-#from userStory11 import userStory11
+from userStory21 import userStory21
 from userStory12 import userStory12
 
 def sprint3_results():
@@ -13,7 +13,7 @@ def sprint3_results():
 	errors = []
 	errors.extend(userStory09(fileName))
 	errors.extend(userStory10(fileName))
-	#errors.extend(userStory11(fileName))
+	errors.extend(userStory21(fileName))
 	errors.extend(userStory12(fileName))
 
 	for e in errors:
