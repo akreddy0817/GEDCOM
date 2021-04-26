@@ -1,0 +1,43 @@
+Individuals Information--------------->
++-----+----------------+--------+------------+-----+-------+------------+--------+--------------+
+|  ID |      Name      | Gender |  Birthday  | Age | Alive |   Death    | Child  |    Spouse    |
++-----+----------------+--------+------------+-----+-------+------------+--------+--------------+
+|  I1 | Akhilesh Reddy |   M    | 2000-08-17 |  20 |  True |     NA     | ['F1'] |      NA      |
+|  I2 |   Raj Reddy    |   M    | 1961-05-19 |  59 |  True |     NA     | ['F2'] |    ['F1']    |
+|  I3 |  Sapna Aruva   |   F    | 1971-08-02 |  49 |  True |     NA     | ['F3'] |    ['F1']    |
+|  I4 | Akhilesh Reddy |   M    | 2000-08-17 |  20 |  True |     NA     | ['F1'] |      NA      |
+|  I5 | Narsmiha Reddy |   M    | 1925-10-07 |  73 | False | 1999-04-13 |   NA   |    ['F2']    |
+|  I6 | Narsmiha Reddy |   F    | 1925-10-07 |  76 | False | 2001-11-12 |   NA   |    ['F2']    |
+|  I7 | Rajender Aruva |   M    | 1935-08-29 |  82 | False | 2017-10-11 |   NA   |    ['F3']    |
+|  I8 |  Anjuna Aruva  |   F    | 1939-11-20 |  79 | False | 2019-02-14 |   NA   |    ['F3']    |
+|  I9 |  Dhruv Reddy   |   M    | 1967-10-11 |  53 |  True |     NA     | ['F2'] |    ['F4']    |
+| I10 | Hritesh Reddy  |   M    | 2000-09-10 |  20 |  True |     NA     | ['F4'] |      NA      |
+| I11 |  Priya Hedge   |   F    | 1972-08-10 |  48 |  True |     NA     |   NA   |    ['F4']    |
+| I12 |   Raj Reddy    |   M    | 1968-09-09 |  52 |  True |     NA     | ['F3'] | ['F5', 'F6'] |
+| I13 |  Ruchi Manda   |   F    | 1976-10-10 |  44 |  True |     NA     |   NA   |    ['F6']    |
+| I14 |  Sapna Aruva   |   F    | 1980-03-05 |  41 |  True |     NA     |   NA   |    ['F5']    |
+| I15 |  Nithi Aruva   |   F    | 2006-10-10 |  14 |  True |     NA     | ['F6'] |      NA      |
+| I16 |  Vindya Aruva  |   F    | 2015-07-14 |  5  |  True |     NA     | ['F5'] |      NA      |
+| I17 |  Venkat Aruva  |   M    | 2017-08-07 |  3  |  True |     NA     | ['F5'] |      NA      |
++-----+----------------+--------+------------+-----+-------+------------+--------+--------------+
+
+
+Family Information------------>
++----+------------+------------+------------+----------------+---------+----------------+----------------------------------------------------------------------------------------------------------+
+| ID |  Married   |  Divorced  | Husband ID |  Husband Name  | Wife ID |   Wife Name    |                                                 Children                                                 |
++----+------------+------------+------------+----------------+---------+----------------+----------------------------------------------------------------------------------------------------------+
+| F1 | 1995-03-05 |     NA     |     I2     |   Raj Reddy    |    I3   |  Sapna Aruva   |                                               ['I1', 'I4']                                               |
+| F2 | 1955-02-01 |     NA     |     I5     | Narsmiha Reddy |    I6   | Narsmiha Reddy |                                               ['I2', 'I9']                                               |
+| F3 | 1960-08-06 |     NA     |     I7     | Rajender Aruva |    I8   |  Anjuna Aruva  |                                              ['I3', 'I12']                                               |
+| F4 | 1999-05-03 |     NA     |     I9     |  Dhruv Reddy   |   I11   |  Priya Hedge   |                                                 ['I10']                                                  |
+| F5 | 2012-04-04 |     NA     |    I12     |   Raj Reddy    |   I14   |  Sapna Aruva   | ['I2', 'I3', 'I4', 'I5', 'I6', 'I7', 'I8', 'I9', 'I10', 'I11', 'I12', 'I13', 'I14', 'I15', 'I16', 'I17'] |
+| F6 | 2003-09-08 | 2010-01-09 |    I12     |   Raj Reddy    |   I13   |  Ruchi Manda   |                                                 ['I15']                                                  |
++----+------------+------------+------------+----------------+---------+----------------+----------------------------------------------------------------------------------------------------------+
+
+ERROR: FAMILY: US15: Family F5 has 16 siblings.
+ERROR: FAMILY: US16: Child I12's last name (Reddy) does not match family name (Aruva) in family F3.
+ERROR: FAMILY: US16: Child I7's last name (Aruva) does not match family name (Reddy) in family F5.
+ERROR: FAMILY: US16: Child I17's last name (Aruva) does not match family name (Reddy) in family F5.
+ERROR: INDIVIDUAL: US23: Two individuals have duplicate names and birthdays [Akhilesh Reddy, 2000-08-17].
+ERROR: INDIVIDUAL: US23: Two individuals have duplicate names and birthdays [Narsmiha Reddy, 1925-10-07].
+ERROR: FAMILY: US24: Two families [F1, F5] have duplicate spouses [Raj Reddy, Sapna Aruva].
